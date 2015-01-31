@@ -1,0 +1,30 @@
+var
+    gulp = require("gulp")
+  , uglify = require("gulp-uglify")
+  , rename = require('gulp-rename')
+  , clean = require('gulp-clean')
+  , jsdoc = require('gulp-doggy')
+;
+
+gulp.task("build", function(){
+  gulp.src("./src/*.js")
+    .pipe( uglify())
+    .pipe( rename("iframeTracker.min.js") )
+    .pipe( gulp.dest("./dist"));
+})
+
+gulp.task("clean", function(){
+  gulp.src("./dist")
+    .pipe(clean() );
+})
+
+gulp.task("jsdoc", function(){
+  gulp.src(["./src/*.js", "README.md"])
+  .pipe(jsdoc('./doc'))
+})
+
+gulp.task("watch", function(){
+  gulp.watch(["./src/*.js", "./spec/*.js"], ["build"]);
+})
+
+gulp.task("default", ["clean","build", "watch"] );

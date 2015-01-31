@@ -1,0 +1,26 @@
+{
+  "name": "iFrameTracker",
+  "version": "1.0.0",
+  "description": "a simple click tracker on iframes",
+  "main": "iframeTracker.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sahilsk/iframeTracker.git"
+  },
+  "author": "Sonu K. Meena <sonukr666@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sahilsk/iframeTracker/issues"
+  },
+  "homepage": "https://github.com/sahilsk/Ghatna",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-clean": "^0.3.1",
+    "gulp-doggy": "0.0.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0"
+  }
+}
