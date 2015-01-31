@@ -1,12 +1,14 @@
 iFrameTracker: Track clicks on iframe( ads, social media buttons, etc)
 =====================================
 
-To  track clicks on iframe, it work using following two heuristics:
+Since you can't listen to events occuring in iframe, this solution make use of two heuristic:
 
-1. Mouse is over iframe wrapping element
-2. Window blur event while mouse is over to signify an event.
+1. Mouse is over iframe wrapping element, and
+2. Window blur event is fired while mouse is over.
 
->> Since it depend on 'mouseover', 'mouseout' event, it won't work on touch devices.
+It won't assure 100% that click has occurred over iframe because user can use browser shortcuts to close(alt+f4) or open new tab (ctrl+t), which will fire window 'blur' event while mouse is over the iframe wrapping element but click didn't happen. However, for other cases, it does the job.
+
+> NOTE: Since it depend on mouse events('mouseover', 'mouseout') it won't work on touch devices.
 
 Build Instructions
 -------
@@ -41,7 +43,6 @@ Finally, start tracker
 Stop tracker
 
     tracker.stop();
-
 
 
 
